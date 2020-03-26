@@ -47,7 +47,7 @@ class Home extends PureComponent {
     // chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
     //   currentUrl = tabs[0].url;
     // });
-    let isGithubPage = this.state.currentUrl.indexOf('github') > 0;
+    let isGithubPage = this.state.currentUrl.indexOf('github') > 0 && this.state.currentUrl.indexOf('compare') > 0;
     // console.log('this.state.currentUrl: ',this.state.currentUrl);
     // console.log('isGithub: ',isGithub);
     

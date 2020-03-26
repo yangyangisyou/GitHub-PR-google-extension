@@ -19,6 +19,7 @@ import {
 import { DisplayFormikState } from '../util/debug.js';
 import ReactMarkdown from 'react-markdown';
 import Home from '../home';
+import './setting.css';
 class Setting extends PureComponent {
     state = {
         formData: {
@@ -48,7 +49,6 @@ class Setting extends PureComponent {
     // };
 
     renderForm = (props) => {
-        const tab = '\u2003';
         const blockStyle = {
             margin: '10px 10px'
         };
@@ -58,16 +58,19 @@ class Setting extends PureComponent {
             <Form>
                 {/* 部署環境 */}
                 <div style = { blockStyle }>
-                    <label style = {{ float: "left" }}> Deploy attribute:{tab} </label>
+                    <label style = {{ float: "left" }}> Deploy attribute: </label>
                     <Select value = {this.state.formData.environment} 
                             name = 'environment'
-                            style = {{ width: 120 }} 
+                            style = {{ width: 120, margin: 'auto 10px' }} 
                             onChange={(value) => {
                             this.setState({
                                 ...this.state, 
                                 formData: {
                                     ...this.state.formData, 
-                                    environment: value
+                                    environment: value,
+                                    title: this.state.formData.hotfix 
+                                    ? `Hotfix to ${this.state.formData.environment}`
+                                    : `Deploy to ${this.state.formData.environment}`
                                 }
                             })
                         }} 
@@ -84,17 +87,19 @@ class Setting extends PureComponent {
                                 ...this.state, 
                                 formData: {
                                     ...this.state.formData, 
-                                    hotfix: element.target.checked
-                                    }
-                                })
-                            }
-                        }      
+                                    hotfix: element.target.checked,
+                                    title: this.state.formData.hotfix 
+                                    ? `Hotfix to ${this.state.formData.environment}`
+                                    : `Deploy to ${this.state.formData.environment}`
+                                }
+                            })
+                        }}      
                     >hotfix</Checkbox>
                     <br />
                 </div>
                 <div style = { blockStyle }>
                     {/* 內容 */}
-                    <label style = {{ float: "left" }}> Your content:{tab} </label>
+                    <label style = {{ float: "left" }}> Your content: </label>
                     <TextArea
                         rows={5} 
                         value={this.state.formData.content} 
@@ -173,7 +178,6 @@ class Setting extends PureComponent {
                         async (data, {setSubmitting}) => {
                             await storeData(this.state.formData);
                             antdMessage.success('Save data successful');
-                            alert(JSON.stringify(this.state.formData));
                         // await this.saveFormData(data);
                         setSubmitting(false);   
                     }}
