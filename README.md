@@ -28,7 +28,7 @@ chrome://extensions/
 
 ---
 
-## How to start a new project yourself  
+## How to start a new google extension project yourself  
 1. Create project
   * For example, you can use React, or just  simple popup HTML.
  
@@ -90,3 +90,6 @@ chrome://extensions/
   "content_security_policy": "script-src 'self' 'sha256-......='; object-src 'self'"
 }
 ```
+
+5. Build project  
+6. Load and Use it  
