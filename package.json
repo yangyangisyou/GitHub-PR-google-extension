@@ -6,8 +6,13 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "antd": "^4.0.4",
+    "formik": "^2.1.4",
+    "formik-antd": "^2.0.0",
     "react": "^16.13.1",
+    "react-chrome-extension-router": "^1.1.0",
     "react-dom": "^16.13.1",
+    "react-markdown": "^4.3.1",
     "react-scripts": "3.4.1"
   },
   "scripts": {

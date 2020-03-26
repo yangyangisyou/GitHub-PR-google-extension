@@ -1,3 +1,21 @@
+body {
+  width: 300px;
+  height: 400px;
+}
+
+.item {
+  font-size: 130%;
+  height: 40px;
+}
+
+div.tabimage img {
+  margin: 8px 10px 10px 8px;
+}
+
+div.url {
+  padding-top: 6px;
+}
+
 .App {
   text-align: center;
 }
