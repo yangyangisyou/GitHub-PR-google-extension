@@ -90,6 +90,8 @@ chrome://extensions/
   "content_security_policy": "script-src 'self' 'sha256-......='; object-src 'self'"
 }
 ```
+5. Setting permissions attribute
+  * Note that if you want to use chrome API, make sure you have added permissions.
 
-5. Build project  
-6. Load and Use it  
+6. Build project  
+7. Load and Use it  
